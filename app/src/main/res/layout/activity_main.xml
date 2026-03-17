@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:background="#E6F4FA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="沉睡的神祇"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#005F73"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- 输入框 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#FFFFFF"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:id="@+id/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@id/btnClear"
+                android:background="@null"
+                android:hint="输入故事书编号 (例如 2.1)"
+                android:textSize="18sp"
+                android:paddingStart="10dp"/>
+
+            <ImageButton
+                android:id="@+id/btnClear"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:tint="#0077B6"/>
+        </RelativeLayout>
+
+        <!-- 查找按钮 -->
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="查找"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#0077B6"/>
+
+        <!-- 语音播放器卡片 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="语音播放器"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#005F73"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/timeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="00:00 / 00:00"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"/>
+
+                <ImageButton
+                    android:id="@+id/btnPlay"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@android:drawable/ic_media_play"
+                    android:background="@drawable/circle_button"
+                    android:tint="#FFFFFF"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="15dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- BGM播放器 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="背景音乐"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#005F73"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!-- BGM播放按钮 -->
+                <ImageButton
+                    android:id="@+id/btnBgmPlay"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@android:drawable/ic_media_play"
+                    android:background="@drawable/circle_button"
+                    android:tint="#FFFFFF"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"/>
+
+                <!-- BGM进度条 -->
+                <SeekBar
+                    android:id="@+id/bgmSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:progressTint="#0077B6"
+                    android:thumbTint="#0077B6"/>
+
+                <!-- BGM时间 -->
+                <TextView
+                    android:id="@+id/bgmTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="00:00 / 00:00"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:layout_marginTop="4dp"/>
+
+                <!-- 音量 -->
+                <TextView
+                    android:id="@+id/volumeText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="音量 50%"
+                    android:gravity="center"/>
+                <TextView
+                    android:text="音量"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <SeekBar
+                    android:id="@+id/volumeBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:progressTint="#0096C7"
+                    android:thumbTint="#0096C7"/>
+
+                <!-- 循环 -->
+                <Switch
+                    android:id="@+id/loopSwitch"
+                    android:text="循环播放"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- 公告 -->
+        <TextView
+            android:id="@+id/noticeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="公告"
+            android:textSize="13sp"
+            android:textColor="#555555"
+            android:gravity="center"
+            android:layout_marginTop="20dp"/>
+    </LinearLayout>
+</ScrollView>
